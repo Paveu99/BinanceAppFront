@@ -1,17 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
-import {UserEntity} from 'types'
-import { Spinner } from './components/spinner/Spinner';
-import {DownloadBttn} from "./components/download/DownloadBttn";
+import { SearchContext } from './components/search/SearchContext';
+import { SearchComponent } from './components/search/SearchComponent';
+import {AllTradesList} from "./components/trades/AllTradesList";
 
 export const App = () => {
 
+    const [search, setSearch] = useState('')
 
-  return (
-    <div>
-        <Spinner/>
-        <DownloadBttn/>
-    </div>
-  );
+    return (
+        <div>
+            <SearchContext.Provider value={{search, setSearch}}>
+                <AllTradesList/>
+            </SearchContext.Provider>
+        </div>
+    )
 }

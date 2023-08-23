@@ -1,16 +1,15 @@
 import React, {useEffect, useState} from "react";
 import * as XLSX from 'xlsx'
-
+import {WholeTradeEntity} from 'types'
 export const DownloadBttn = () => {
 
-    const [trades, setTrades] = useState<[] | null>(null)
+    const [trades, setTrades] = useState<WholeTradeEntity[] | null>(null)
 
     const refreshTrades = async () => {
         setTrades(null)
         const res = await fetch('http://localhost:3001/trades')
         const data = await res.json()
         setTrades(data.trades)
-        console.log(trades)
     }
 
     useEffect(() => {
