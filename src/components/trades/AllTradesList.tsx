@@ -27,7 +27,9 @@ export const AllTradesList = () => {
         setFavouriteTradeList(null)
         const res = await fetch('http://localhost:3001/trades');
         const data = await res.json()
-        setFavouriteTradeList(data.favouriteData)
+        setFavouriteTradeList(data.favouriteData.filter(function (el: TradeEntity) {
+            return el.userId === localStorage.getItem('token2')
+        }))
     }
 
 

@@ -5,6 +5,7 @@ interface Props {
     trade: TradeEntity
 }
 export const SingleFavTrade = (props: Props) => {
+
     const response = <div>
         {props.trade.symbol}
     </div>

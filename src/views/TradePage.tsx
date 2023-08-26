@@ -1,5 +1,6 @@
 import React from "react";
+import {AllTradesList} from "../components/trades/AllTradesList";
 
 export const TradePage = () => {
-    return <p>TradePage</p>
+    return <AllTradesList/>
 }

@@ -1,5 +1,7 @@
-import React from "react";
-import { WholeTradeEntity } from "types";
+import React, {FormEvent, useState} from "react";
+import {TradeEntity, WholeTradeEntity } from "types";
+import {json} from "react-router-dom";
+import {symbol} from "prop-types";
 
 interface Props {
     trade: WholeTradeEntity
@@ -8,11 +10,29 @@ interface Props {
 
 export const SingleTrade = (props: Props) => {
 
-    const cosiek = props.refresh
+    const [form, setForm] = useState<TradeEntity>({
+        symbol: props.trade.symbol,
+        userId: localStorage.getItem('token2') as string
+    })
+    const updateList = async (e: FormEvent) =>{
+        e.preventDefault()
+        try {
+            const res = await fetch('http://localhost:3001/trades', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(form),
+            })
+            console.log(await res.json())
+        } finally {
+            props.refresh()
+        }
+    }
 
     return (
         <tr>
-            <td><div onClick={cosiek}>{props.trade.symbol}</div></td>
+            <td><div onClick={updateList}>{props.trade.symbol}</div></td>
         </tr>
     )
 }
