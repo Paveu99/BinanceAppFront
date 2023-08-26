@@ -13,6 +13,7 @@ import {InfoPage} from "./views/InfoPage";
 import {TradePage} from "./views/TradePage";
 import {LogRegPage} from "./views/LogRegPage";
 import {NotFoundView} from "./views/NotFoundView";
+import {LogOutForm} from "./components/header/LogOutForm";
 
 export const App = () => {
 
@@ -31,7 +32,7 @@ export const App = () => {
                     <Route path='/info' element={<InfoPage/>}/>
                     <Route path='/trades' element={<TradePage/>}/>
                     <Route path='/user' element={<LogRegPage/>}/>
-                    <Route path='/user/logout'/>
+                    <Route path='/user/logout' element={<LogOutForm/>}/>
                     <Route path='*' element={<NotFoundView/>}/>
                 </Routes>
                 {/*<FavouriteTrades/>*/}

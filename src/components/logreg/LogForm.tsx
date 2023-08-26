@@ -69,10 +69,6 @@ export const LogForm = (props: Props) => {
 
     if (loading) return <Spinner/>
 
-    const logout = () => {
-        localStorage.clear()
-        window.location.replace("http://localhost:3000");
-    }
 
     const box = <p className="checkAnswer"
                    style={
@@ -126,15 +122,6 @@ export const LogForm = (props: Props) => {
         <div className="form">
             {formType === 'logowanie' ? formik : <RegForm/>}
         </div>
-        <>
-            <h1>Are you sure about that?</h1>
-            <div className='decision'>
-                <button className='submitbutton' onClick={logout}>Yes</button>
-                <NavLink to="/">
-                    <button className='submitbutton'>No</button>
-                </NavLink>
-            </div>
-        </>
     </div>
 
 }

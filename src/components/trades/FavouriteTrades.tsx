@@ -45,7 +45,7 @@ export const FavouriteTrades = (props: Props) => {
         <div>
             No to tutaj są ulubione trady
         </div>
-        <p>{props.faves.length === 0 ? <div>Add favourite components</div> : componentWithFavTrades}</p>
+        {props.faves.length === 0 ? <div>Add favourite components</div> : componentWithFavTrades}
     </div>
 
     return (favTrades)
