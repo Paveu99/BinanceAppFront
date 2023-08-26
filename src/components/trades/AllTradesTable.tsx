@@ -5,6 +5,7 @@ import {SingleTrade} from "./SingleTrade";
 
 interface Props {
     trades: WholeTradeEntity[],
+    refresh: () => void
 }
 
 export const AllTradesTable = (props: Props) => {
@@ -20,7 +21,7 @@ export const AllTradesTable = (props: Props) => {
             {
                 props.trades
                     .map((el) => {
-                        return (<SingleTrade trade={el} key={el.symbol}/>)
+                        return (<SingleTrade refresh={props.refresh} trade={el} key={el.symbol}/>)
                     })
             }
             </tbody>

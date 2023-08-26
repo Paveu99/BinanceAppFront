@@ -1,10 +1,11 @@
 import React, {useContext, useEffect, useState} from "react";
-import {WholeTradeEntity} from "../../../../BinanceAppBack/types/trade/trade.entity";
+import {TradeEntity, WholeTradeEntity} from "../../../../BinanceAppBack/types/trade/trade.entity";
 import {Spinner} from "../spinner/Spinner";
 import {SearchContext} from "../search/SearchContext";
 import {Pagination} from "./Pagination";
 import {AllTradesTable} from "./AllTradesTable";
 import {SearchComponent} from "../search/SearchComponent";
+import { FavouriteTrades } from "./FavouriteTrades";
 
 export const AllTradesList = () => {
 
@@ -13,6 +14,7 @@ export const AllTradesList = () => {
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [postsPerPage] = useState<number>(20);
     const [tradeList, setTradeList] = useState<WholeTradeEntity[] | null>(null);
+    const [favoutireTradeList, setFavouriteTradeList] = useState <TradeEntity[] | null>(null)
 
     const refreshList = async () => {
         setTradeList(null)
@@ -21,8 +23,17 @@ export const AllTradesList = () => {
         setTradeList(data.trades)
     };
 
+    const refreshFavouriteList = async () => {
+        setFavouriteTradeList(null)
+        const res = await fetch('http://localhost:3001/trades');
+        const data = await res.json()
+        setFavouriteTradeList(data.favouriteData)
+    }
+
+
     useEffect(() => {
         refreshList()
+        refreshFavouriteList()
     }, [])
 
     if (tradeList === null) {
@@ -41,11 +52,9 @@ export const AllTradesList = () => {
     );
 
 
-    // if (filteredTrades.length === 0) {
-    //     return <div className="failureres">
-    //         No results
-    //     </div>
-    // }
+    const noRseults = <div className="failureres">
+        No results
+    </div>
 
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -55,10 +64,12 @@ export const AllTradesList = () => {
         setCurrentPage(pageNumber);
     }
 
+    const allTrades = <AllTradesTable refresh={refreshFavouriteList} trades={currentPosts}/>
 
     return <div>
+        {!favoutireTradeList ? <Spinner/> : <FavouriteTrades faves={favoutireTradeList}/>}
         <SearchComponent page={() => setCurrentPage(1)}/>
-        <AllTradesTable trades={currentPosts}/>
+        {filteredTrades.length === 0 ? noRseults : allTrades}
         <Pagination
             paginate={paginate}
             totalPosts={filteredTrades.length}
