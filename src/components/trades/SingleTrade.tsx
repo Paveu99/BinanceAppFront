@@ -12,7 +12,9 @@ export const SingleTrade = (props: Props) => {
 
     const [form, setForm] = useState<TradeEntity>({
         symbol: props.trade.symbol,
-        userId: localStorage.getItem('token2') as string
+        userId: localStorage.getItem('token2') as string,
+        weightedAvgPrice: props.trade.weightedAvgPrice,
+        priceChangePercent: props.trade.priceChangePercent,
     })
     const updateList = async (e: FormEvent) =>{
         e.preventDefault()

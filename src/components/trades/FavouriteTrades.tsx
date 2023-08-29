@@ -5,6 +5,7 @@ import {Spinner} from "../spinner/Spinner";
 
 interface Props {
     faves: TradeEntity[]
+    refresh: () => void
 }
 
 export const FavouriteTrades = (props: Props) => {
@@ -37,7 +38,7 @@ export const FavouriteTrades = (props: Props) => {
     const componentWithFavTrades = <div>
         {props.faves
             .map((el: TradeEntity) => {
-                return (<SingleFavTrade trade={el} key={el.id}/>)
+                return (<SingleFavTrade refresh={props.refresh} trade={el} key={el.id}/>)
             })}
     </div>
 

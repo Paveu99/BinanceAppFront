@@ -20,14 +20,14 @@ export const AllTradesList = () => {
         setTradeList(null)
         const res = await fetch('http://localhost:3001/trades');
         const data = await res.json();
-        setTradeList(data.trades)
+        setTradeList(data.filteredTrades)
     };
 
     const refreshFavouriteList = async () => {
         setFavouriteTradeList(null)
         const res = await fetch('http://localhost:3001/trades');
         const data = await res.json()
-        setFavouriteTradeList(data.favouriteData.filter(function (el: TradeEntity) {
+        setFavouriteTradeList(data.favourite.filter(function (el: TradeEntity) {
             return el.userId === localStorage.getItem('token2')
         }))
     }
@@ -69,7 +69,7 @@ export const AllTradesList = () => {
     const allTrades = <AllTradesTable refresh={refreshFavouriteList} trades={currentPosts}/>
 
     return <div>
-        {!favoutireTradeList ? <Spinner/> : <FavouriteTrades faves={favoutireTradeList}/>}
+        {!favoutireTradeList ? <Spinner/> : <FavouriteTrades refresh = {refreshFavouriteList} faves={favoutireTradeList}/>}
         <SearchComponent page={() => setCurrentPage(1)}/>
         {filteredTrades.length === 0 ? noRseults : allTrades}
         <Pagination
