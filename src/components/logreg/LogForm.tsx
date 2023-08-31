@@ -53,6 +53,7 @@ export const LogForm = (props: Props) => {
                     props.refresh()
                     localStorage.setItem('token', data.user.name)
                     localStorage.setItem('token2', data.user.id as string)
+                    localStorage.setItem('token3', data.user.email as string)
                 } else {
                     setSubmitted(true)
                     setCorrect(false)

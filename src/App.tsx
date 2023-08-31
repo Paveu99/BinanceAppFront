@@ -14,13 +14,15 @@ import {TradePage} from "./views/TradePage";
 import {LogRegPage} from "./views/LogRegPage";
 import {NotFoundView} from "./views/NotFoundView";
 import {LogOutForm} from "./components/header/LogOutForm";
+import {DeleteUserForm} from "./components/header/DeleteUserForm";
+import {EditUserView} from "./components/header/EditUserForm";
 
 export const App = () => {
 
     const [search, setSearch] = useState('')
 
-    const refreshMath = () => {
-        window.location.replace("http://localhost:3000");
+    const refresh = () => {
+        window.location.replace("http://localhost:3000/user/edit");
     }
 
     return (
@@ -33,11 +35,10 @@ export const App = () => {
                     <Route path='/trades' element={<TradePage/>}/>
                     <Route path='/user' element={<LogRegPage/>}/>
                     <Route path='/user/logout' element={<LogOutForm/>}/>
+                    <Route path='/user/edit' element={<EditUserView refresh={refresh}/>}/>
+                    <Route path='/user/delete' element={<DeleteUserForm id={localStorage.getItem('token2') as string}/>}/>
                     <Route path='*' element={<NotFoundView/>}/>
                 </Routes>
-                {/*<FavouriteTrades/>*/}
-                {/*<AllTradesList/>*/}
-                {/*<LogForm refresh={refreshMath}/>*/}
             </SearchContext.Provider>
         </div>
     )
