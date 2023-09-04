@@ -10,23 +10,14 @@ interface Props {
 
 export const AllTradesTable = (props: Props) => {
 
-    const response = <>
-        <table className='tabel'>
-            <thead>
-            <tr className="headers">
-                <th>Symbol</th>
-            </tr>
-            </thead>
-            <tbody>
+    const response = <div>
             {
                 props.trades
                     .map((el) => {
                         return (<SingleTrade refresh={props.refresh} trade={el} key={el.symbol}/>)
                     })
             }
-            </tbody>
-        </table>
-    </>
+    </div>
     return (
         response
     )
