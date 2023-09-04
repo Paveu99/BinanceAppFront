@@ -85,7 +85,6 @@ export const EditEmailForm = (props: Props) => {
 
     return <form autoComplete='off' className="form" onSubmit={checkInput}>
         {submitted && box}
-        <em style={{fontSize: 'x-small'}}>must be at least 3 characters long</em>
         <p>
             <label>
                 e-mail: <br/>

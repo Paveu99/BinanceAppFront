@@ -12,10 +12,6 @@ export const LocalView = () => {
             <b style={{padding: '0 10px 0 10px'}}>
                 <NavLink to="/user/logout">Logout</NavLink>
             </b>
-            |
-            <b style={{padding: '0 10px 0 10px'}}>
-                <NavLink to="/user/delete">Delete</NavLink>
-            </b>
         </div>
     )
 }
