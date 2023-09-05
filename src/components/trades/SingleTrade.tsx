@@ -1,7 +1,10 @@
 import React, {FormEvent, useState} from "react";
 import {TradeEntity, WholeTradeEntity } from "types";
+import '../styles/Modal.css'
+import Popup from "reactjs-popup";
 import {json} from "react-router-dom";
 import {symbol} from "prop-types";
+import {Modal} from "../modal/Modal";
 
 interface Props {
     trade: WholeTradeEntity
@@ -10,12 +13,14 @@ interface Props {
 
 export const SingleTrade = (props: Props) => {
 
+    const [openModal, setOpenModal] = useState<boolean>(false)
     const [form, setForm] = useState<TradeEntity>({
         symbol: props.trade.symbol,
         userId: localStorage.getItem('token2') as string,
         weightedAvgPrice: props.trade.weightedAvgPrice,
         priceChangePercent: props.trade.priceChangePercent,
     })
+
     const updateList = async (e: FormEvent) =>{
         e.preventDefault()
         try {
@@ -32,9 +37,10 @@ export const SingleTrade = (props: Props) => {
         }
     }
 
-    return (
-        <tr>
-            <td><div onClick={updateList}>{props.trade.symbol}</div></td>
-        </tr>
-    )
+    return <div>
+        {props.trade.symbol}
+        <button onClick={updateList}>Add to the data base</button>
+        <button onClick={() => setOpenModal(!openModal)}>Show modal</button>
+        <Modal info={props.trade} isOpen={openModal} onClose={() => setOpenModal(false)}/>
+    </div>
 }
