@@ -1,9 +1,6 @@
 import React, {FormEvent, useState} from "react";
 import {TradeEntity, WholeTradeEntity } from "types";
 import '../styles/Modal.css'
-import Popup from "reactjs-popup";
-import {json} from "react-router-dom";
-import {symbol} from "prop-types";
 import {Modal} from "../modal/Modal";
 
 interface Props {

@@ -11,11 +11,16 @@ export const AllTradesList = () => {
 
     const {search} = useContext(SearchContext)
 
+    const [option, setOption] = useState<string>('includes')
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [postsPerPage] = useState<number>(20);
     const [tradeList, setTradeList] = useState<WholeTradeEntity[] | null>(null);
     const [favoutireTradeList, setFavouriteTradeList] = useState <TradeEntity[] | null>(null)
 
+    const colorOfLink = ({isActive}: {
+        isActive: boolean
+    }) => ({color: isActive ? 'green' : 'red'})
+    
     const refreshList = async () => {
         setTradeList(null)
         const res = await fetch('http://localhost:3001/trades');
@@ -42,16 +47,42 @@ export const AllTradesList = () => {
         return <Spinner/>
     }
 
-    const filteredTrades = tradeList.filter(
-        trade => {
-            return (
-                trade
-                    .symbol
-                    .toLowerCase()
-                    .includes(search.toLowerCase())
-            );
-        }
-    );
+    let filteredTrades: WholeTradeEntity[] = []
+
+    if (option === 'startsWith') {
+        filteredTrades = tradeList.filter(
+            trade => {
+                return (
+                    trade
+                        .symbol
+                        .toLowerCase()
+                        .startsWith(search.toLowerCase())
+                );
+            }
+        );
+    } else if (option === 'includes') {
+        filteredTrades = tradeList.filter(
+            trade => {
+                return (
+                    trade
+                        .symbol
+                        .toLowerCase()
+                        .includes(search.toLowerCase())
+                );
+            }
+        );
+    } else if (option === 'endsWith') {
+        filteredTrades = tradeList.filter(
+            trade => {
+                return (
+                    trade
+                        .symbol
+                        .toLowerCase()
+                        .endsWith(search.toLowerCase())
+                );
+            }
+        );
+    }
 
 
     const noRseults = <div className="failureres">
@@ -71,6 +102,12 @@ export const AllTradesList = () => {
     return <div>
         {!favoutireTradeList ? <Spinner/> : <FavouriteTrades refresh = {refreshFavouriteList} faves={favoutireTradeList}/>}
         <SearchComponent page={() => setCurrentPage(1)}/>
+        <label>Filter</label>
+        <select onChange={(e) => setOption(e.target.value)}>
+            <option value='includes'>Includes</option>
+            <option value='startsWith'>Starts with</option>
+            <option value='endsWith'>Ends with</option>
+        </select>
         {filteredTrades.length === 0 ? noRseults : allTrades}
         <Pagination
             paginate={paginate}

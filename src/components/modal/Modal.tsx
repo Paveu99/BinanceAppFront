@@ -56,29 +56,3 @@ export const Modal = (props: Props) => {
     ))
 
 }
-//
-// export const ModalHeader = (props: Props) => {
-//     return (
-//         <div className='react-modal-header'>
-//             <div className='react-modal-title'>
-//                 <button onClick={props.onClose} className='btn-close'>&times;</button>
-//             </div>
-//         </div>
-//     )
-// }
-//
-// export const ModalBody = (props: Props) => {
-//     return (
-//         <div className="react-modal-body">
-//             <div></div>
-//         </div>
-//     )
-// }
-//
-// export const ModalFooter = (props: Props) => {
-//     return (
-//         <div className="react-modal-body">
-//             <div></div>
-//         </div>
-//     )
-// }

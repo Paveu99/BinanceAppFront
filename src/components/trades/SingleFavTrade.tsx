@@ -1,11 +1,14 @@
-import React from "react";
-import {TradeEntity, WholeTradeEntity } from "types";
+import React, {useState} from "react";
+import {TradeEntity} from "types";
+import {Modal} from "../modal/Modal";
 
 interface Props {
     trade: TradeEntity
     refresh: () => void
 }
 export const SingleFavTrade = (props: Props) => {
+
+    const [openModal, setOpenModal] = useState<boolean>(false)
 
     const deleteTrade = async () => {
         if (!window.confirm(`Are you sure you want to remove this trade`)) {
@@ -26,7 +29,10 @@ export const SingleFavTrade = (props: Props) => {
     }
 
     const response = <div>
-        {props.trade.symbol} and {props.trade.weightedAvgPrice} <button onClick={deleteTrade}>Delete</button>
+        {props.trade.symbol} and {props.trade.weightedAvgPrice}
+        <button onClick={deleteTrade}>Delete</button>
+        <button onClick={() => setOpenModal(!openModal)}>Show modal</button>
+        <Modal info={props.trade} isOpen={openModal} onClose={() => setOpenModal(false)}/>
     </div>
 
     return (response)
