@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import {useSpring, animated, useTransition} from "@react-spring/web"
 import '../styles/Modal.css'
 import { WholeTradeEntity } from "types";
+import {AddExpression} from "../calculator/Calculator";
 
 interface Props {
     info: WholeTradeEntity
@@ -45,11 +46,11 @@ export const Modal = (props: Props) => {
         <animated.div style={springs} className='react-modal-wrapper' onClick={e => e.stopPropagation()}>
             <div className='react-modal-content'>
                 <header>
-                    <h2>Trade Calculator</h2>
+                    <h2>Trade Calculator: {props.info.symbol}</h2>
                     <a href='#' className="close" onClick={props.onClose}></a>
                 </header>
                 <hr/>
-                {props.info.symbol} is weighted at {props.info.weightedAvgPrice}
+                <p><AddExpression val={props.info.weightedAvgPrice}/></p>
             </div>
         </animated.div>
     </animated.div>
