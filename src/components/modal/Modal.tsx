@@ -50,7 +50,7 @@ export const Modal = (props: Props) => {
                     <a href='#' className="close" onClick={props.onClose}></a>
                 </header>
                 <hr/>
-                <p><AddExpression val={props.info.weightedAvgPrice}/></p>
+                <div><AddExpression val={props.info.weightedAvgPrice}/></div>
             </div>
         </animated.div>
     </animated.div>

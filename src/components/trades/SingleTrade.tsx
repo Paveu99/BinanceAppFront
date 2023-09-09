@@ -6,6 +6,7 @@ import {Modal} from "../modal/Modal";
 interface Props {
     trade: WholeTradeEntity
     refresh: () => void
+    favs: number
 }
 
 export const SingleTrade = (props: Props) => {
@@ -17,7 +18,6 @@ export const SingleTrade = (props: Props) => {
         weightedAvgPrice: props.trade.weightedAvgPrice,
         priceChangePercent: props.trade.priceChangePercent,
     })
-
     const updateList = async (e: FormEvent) =>{
         e.preventDefault()
         try {
@@ -36,7 +36,7 @@ export const SingleTrade = (props: Props) => {
 
     return <div>
         {props.trade.symbol}
-        <button onClick={updateList}>Add to the data base</button>
+        {props.favs >= 5 ? '' : <button onClick={updateList}>Add to the data base</button>}
         <button onClick={() => setOpenModal(!openModal)}>Show modal</button>
         <Modal info={props.trade} isOpen={openModal} onClose={() => setOpenModal(false)}/>
     </div>

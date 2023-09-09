@@ -32,6 +32,7 @@ export const AllTradesList = () => {
         setFavouriteTradeList(null)
         const res = await fetch('http://localhost:3001/trades');
         const data = await res.json()
+        console.log(data.favourite)
         setFavouriteTradeList(data.favourite.filter(function (el: TradeEntity) {
             return el.userId === localStorage.getItem('token2')
         }))
@@ -97,12 +98,15 @@ export const AllTradesList = () => {
         setCurrentPage(pageNumber);
     }
 
-    const allTrades = <AllTradesTable refresh={refreshFavouriteList} trades={currentPosts}/>
+    const allTrades = <AllTradesTable refresh={refreshFavouriteList} trades={currentPosts} favsLen={favoutireTradeList?.length as number}/>
 
     return <div>
         {!favoutireTradeList ? <Spinner/> : <FavouriteTrades refresh = {refreshFavouriteList} faves={favoutireTradeList}/>}
+        <br/>
+        <h3>All trades</h3>
         <SearchComponent page={() => setCurrentPage(1)}/>
         <label>Filter</label>
+        br
         <select onChange={(e) => setOption(e.target.value)}>
             <option value='includes'>Includes</option>
             <option value='startsWith'>Starts with</option>
