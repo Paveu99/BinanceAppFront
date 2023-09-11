@@ -12,14 +12,11 @@ export const AllTradesList = () => {
     const {search} = useContext(SearchContext)
 
     const [option, setOption] = useState<string>('includes')
+    const [option2, setOption2] = useState<string>('A-Z')
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [postsPerPage] = useState<number>(20);
     const [tradeList, setTradeList] = useState<WholeTradeEntity[] | null>(null);
     const [favoutireTradeList, setFavouriteTradeList] = useState <TradeEntity[] | null>(null)
-
-    const colorOfLink = ({isActive}: {
-        isActive: boolean
-    }) => ({color: isActive ? 'green' : 'red'})
     
     const refreshList = async () => {
         setTradeList(null)
@@ -85,6 +82,27 @@ export const AllTradesList = () => {
         );
     }
 
+    if (option2 === "A-Z") {
+        filteredTrades = filteredTrades.sort(function (a: WholeTradeEntity, b: WholeTradeEntity) {
+            if (a.symbol < b.symbol) {
+                return -1;
+            }
+            if (a.symbol > b.symbol) {
+                return 1;
+            }
+            return 0;
+        })
+    } else if (option2 === 'Z-A') {
+        filteredTrades = filteredTrades.sort(function (a: WholeTradeEntity, b: WholeTradeEntity) {
+            if (a.symbol < b.symbol) {
+                return 1;
+            }
+            if (a.symbol > b.symbol) {
+                return -1;
+            }
+            return 0;
+        })
+    }
 
     const noRseults = <div className="failureres">
         No results
@@ -111,6 +129,13 @@ export const AllTradesList = () => {
             <option value='includes'>Includes</option>
             <option value='startsWith'>Starts with</option>
             <option value='endsWith'>Ends with</option>
+        </select>
+        <br/>
+        <label>Sort</label>
+        <br/>
+        <select onChange={(e) => setOption2(e.target.value)}>
+            <option value="A-Z">A-Z</option>
+            <option value="Z-A">Z-A</option>
         </select>
         {filteredTrades.length === 0 ? noRseults : allTrades}
         <Pagination
