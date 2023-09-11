@@ -3,6 +3,8 @@ import {useSpring, animated, useTransition} from "@react-spring/web"
 import '../styles/Modal.css'
 import { WholeTradeEntity } from "types";
 import {AddExpression} from "../calculator/Calculator";
+import up from "../styles/Green_Arrow_Up_Darker.svg.png";
+import down from "../styles/900px-Red_Arrow_Down.svg.png";
 
 interface Props {
     info: WholeTradeEntity
@@ -46,7 +48,10 @@ export const Modal = (props: Props) => {
         <animated.div style={springs} className='react-modal-wrapper' onClick={e => e.stopPropagation()}>
             <div className='react-modal-content'>
                 <header>
-                    <h2>Trade Calculator: {props.info.symbol}</h2>
+                    <div>
+                        <h2>Trade Calculator: {props.info.symbol}</h2>
+                        {Number(props.info.priceChangePercent) > 0 ? <img src={up} style={{width: '30px'}}/> : <img src={down} style={{width: '30px'}}/>}
+                    </div>
                     <a href='#' className="close" onClick={props.onClose}></a>
                 </header>
                 <hr/>

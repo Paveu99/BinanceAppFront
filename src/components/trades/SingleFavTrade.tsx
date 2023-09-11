@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import {TradeEntity} from "types";
 import {Modal} from "../modal/Modal";
+import up from "../styles/Green_Arrow_Up_Darker.svg.png";
+import down from "../styles/900px-Red_Arrow_Down.svg.png";
 
 interface Props {
     trade: TradeEntity
@@ -33,6 +35,7 @@ export const SingleFavTrade = (props: Props) => {
         <button onClick={deleteTrade}>Delete</button>
         <button onClick={() => setOpenModal(!openModal)}>Show modal</button>
         <Modal info={props.trade} isOpen={openModal} onClose={() => setOpenModal(false)}/>
+        {Number(props.trade.priceChangePercent) > 0 ? <img src={up} style={{width: '30px'}}/> : <img src={down} style={{width: '30px'}}/>}
     </div>
 
     return (response)

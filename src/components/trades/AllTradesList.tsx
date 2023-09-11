@@ -106,7 +106,7 @@ export const AllTradesList = () => {
         <h3>All trades</h3>
         <SearchComponent page={() => setCurrentPage(1)}/>
         <label>Filter</label>
-        br
+        <br/>
         <select onChange={(e) => setOption(e.target.value)}>
             <option value='includes'>Includes</option>
             <option value='startsWith'>Starts with</option>
