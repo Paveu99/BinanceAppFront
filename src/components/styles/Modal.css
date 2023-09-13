@@ -25,7 +25,7 @@
 
 .react-modal-content {
     position: relative;
-    background-color: #fff;
+    background-color: #a61b19;
     border: 1px solid rgba(0, 0, 0, 0.3);
     background-clip: padding-box;
     border-radius: 0.3rem;
@@ -43,7 +43,7 @@ header {
     top: 15px;
     width: 32px;
     height: 32px;
-    opacity: 0.3;
+    opacity: 0.5;
 }
 .close:hover {
     opacity: 1;
@@ -54,7 +54,7 @@ header {
     content: ' ';
     height: 33px;
     width: 2px;
-    background-color: #333;
+    background-color: #ffffff;
 }
 .close:before {
     transform: rotate(45deg);
