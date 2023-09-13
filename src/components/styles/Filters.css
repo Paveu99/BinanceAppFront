@@ -1,0 +1,17 @@
+.select {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.label {
+    margin-top: 5px;
+}
+
+.select1 {
+    margin: 2px;
+}
+
+.select2 {
+    margin: 2px;
+}
