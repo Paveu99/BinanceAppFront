@@ -1,16 +1,17 @@
 import React from "react";
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
+import '../styles/Header.css'
 
 export const LocalView = () => {
     const name = localStorage.getItem('token')
     return (
         <div>
-            <b style={{padding: '0 10px 0 10px'}}>
-                <NavLink to="/user/edit">{name}</NavLink>
+            <b>
+                <Link className="link" style={{textDecoration: "none"}} to="/user/edit">{name}</Link>
             </b>
             |
-            <b style={{padding: '0 10px 0 10px'}}>
-                <NavLink to="/user/logout">Logout</NavLink>
+            <b>
+                <Link className="link" style={{textDecoration: "none"}} to="/user/logout">Logout</Link>
             </b>
         </div>
     )
