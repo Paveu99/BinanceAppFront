@@ -1,5 +1,6 @@
 import React, {FormEvent, useContext, useState} from "react";
 import {SearchContext} from "./SearchContext";
+import '../styles/Search.css'
 
 interface Props {
     page: (pageNumber: number) => void
@@ -18,7 +19,7 @@ export const SearchComponent = (props: Props) => {
     return <>
         <form onSubmit={submitHandler}>
             <input
-                className="btn"
+                className="search"
                 type = "search"
                 placeholder = "Type in trade name"
                 value={inputVal}

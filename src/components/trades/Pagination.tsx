@@ -13,15 +13,17 @@ interface Props {
 export const Pagination = (props: Props) => {
     const [page, setPage] = useState(1)
 
-    return <PaginationControl
-        page={props.page}
-        between={4}
-        total={props.totalPosts}
-        limit={props.postsPerPage}
-        changePage={(page) => {
-            setPage(page);
-            props.paginate(page)
-        }}
-        ellipsis={1}
-    />
+    return <div style={{margin: "20px"}}>
+        <PaginationControl
+            page={props.page}
+            between={4}
+            total={props.totalPosts}
+            limit={props.postsPerPage}
+            changePage={(page) => {
+                setPage(page);
+                props.paginate(page)
+            }}
+            ellipsis={1}
+        />
+    </div>
 }
