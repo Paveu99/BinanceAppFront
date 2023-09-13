@@ -1,11 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
 import { SearchContext } from './components/search/SearchContext';
-import { SearchComponent } from './components/search/SearchComponent';
-import {AllTradesList} from "./components/trades/AllTradesList";
-import {RegForm} from "./components/logreg/RegForm";
-import {LogForm} from "./components/logreg/LogForm";
-import {FavouriteTrades} from "./components/trades/FavouriteTrades";
 import { Header } from './components/header/Header';
 import {Route, Routes } from 'react-router-dom';
 import {HomePage} from "./views/HomePage";
@@ -16,6 +11,7 @@ import {NotFoundView} from "./views/NotFoundView";
 import {LogOutForm} from "./components/header/LogOutForm";
 import {DeleteUserForm} from "./components/header/DeleteUserForm";
 import {EditUserView} from "./components/header/EditUserForm";
+import {InfoPageCreator} from "./views/InfoPageCreator";
 
 export const App = () => {
 
@@ -26,12 +22,13 @@ export const App = () => {
     }
 
     return (
-        <div>
+        <div className='body'>
             <SearchContext.Provider value={{search, setSearch}}>
                 <Header/>
                 <Routes>
                     <Route path='/' element={<HomePage/>}/>
                     <Route path='/info' element={<InfoPage/>}/>
+                    <Route path='/infoCreator' element={<InfoPageCreator/>}/>
                     <Route path='/trades' element={<TradePage/>}/>
                     <Route path='/user' element={<LogRegPage/>}/>
                     <Route path='/user/logout' element={<LogOutForm/>}/>
