@@ -24,6 +24,8 @@
 }
 
 .react-modal-content {
+    display: block;
+    text-align: left;
     position: relative;
     background-color: #a61b19;
     border: 1px solid rgba(0, 0, 0, 0.3);
