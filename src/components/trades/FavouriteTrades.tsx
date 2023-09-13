@@ -18,9 +18,9 @@ export const FavouriteTrades = (props: Props) => {
     </div>
 
     const favTrades = <div>
-        <h3>
+        <h2>
             Favourite trades
-        </h3>
+        </h2>
         {props.faves.length === 0 ? <div>Add favourite components</div> : componentWithFavTrades}
     </div>
 
