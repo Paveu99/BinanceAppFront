@@ -3,6 +3,7 @@ import {TradeEntity} from "types";
 import {Modal} from "../modal/Modal";
 import up from "../styles/Green_Arrow_Up_Darker.svg.png";
 import down from "../styles/900px-Red_Arrow_Down.svg.png";
+import '../styles/SingleTrade.css'
 
 interface Props {
     trade: TradeEntity
@@ -30,7 +31,7 @@ export const SingleFavTrade = (props: Props) => {
         props.refresh()
     }
 
-    const response = <div>
+    const response = <div className="singleFavTrade">
         {props.trade.symbol} and {props.trade.weightedAvgPrice}
         <button onClick={deleteTrade}>Delete</button>
         <button onClick={() => setOpenModal(!openModal)}>Show modal</button>

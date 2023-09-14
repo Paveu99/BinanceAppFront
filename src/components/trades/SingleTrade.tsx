@@ -4,6 +4,7 @@ import '../styles/Modal.css'
 import {Modal} from "../modal/Modal";
 import up from '../styles/Green_Arrow_Up_Darker.svg.png'
 import down from '../styles/900px-Red_Arrow_Down.svg.png'
+import '../styles/SingleTrade.css'
 
 interface Props {
     trade: WholeTradeEntity
@@ -36,7 +37,7 @@ export const SingleTrade = (props: Props) => {
         }
     }
 
-    return <div>
+    return <div className="singleTrade">
         {props.trade.symbol}
         {props.favs >= 5 ? '' : <button onClick={updateList}>Add to the data base</button>}
         <button onClick={() => setOpenModal(!openModal)}>Show modal</button>
