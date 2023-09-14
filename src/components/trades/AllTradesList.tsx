@@ -15,7 +15,7 @@ export const AllTradesList = () => {
     const [option, setOption] = useState<string>('includes')
     const [option2, setOption2] = useState<string>('A-Z')
     const [currentPage, setCurrentPage] = useState<number>(1);
-    const [postsPerPage] = useState<number>(20);
+    const [postsPerPage] = useState<number>(21);
     const [tradeList, setTradeList] = useState<WholeTradeEntity[] | null>(null);
     const [favoutireTradeList, setFavouriteTradeList] = useState <TradeEntity[] | null>(null)
     
@@ -121,8 +121,8 @@ export const AllTradesList = () => {
 
     const allTrades = <AllTradesTable refresh={refreshFavouriteList} trades={currentPosts} favsLen={favoutireTradeList?.length as number}/>
 
-    return <div style={{textAlign: "center", marginTop: "20px"}}>
-        {!favoutireTradeList ? <Spinner/> : <FavouriteTrades refresh = {refreshFavouriteList} faves={favoutireTradeList}/>}
+    return <div style={{textAlign: "center", marginTop: "20px", justifyContent: "center"}}>
+        {!favoutireTradeList ? <Spinner/> : <div className="rootek"><FavouriteTrades refresh = {refreshFavouriteList} faves={favoutireTradeList}/></div>}
         <br/>
         <h2>All trades</h2>
         <SearchComponent page={() => setCurrentPage(1)}/>

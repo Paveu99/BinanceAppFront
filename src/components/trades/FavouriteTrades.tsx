@@ -10,7 +10,7 @@ interface Props {
 
 export const FavouriteTrades = (props: Props) => {
 
-    const componentWithFavTrades = <div>
+    const componentWithFavTrades = <div className="rootek">
         {props.faves
             .map((el: TradeEntity) => {
                 return (<SingleFavTrade refresh={props.refresh} trade={el} key={el.id}/>)
@@ -19,7 +19,7 @@ export const FavouriteTrades = (props: Props) => {
 
     const favTrades = <div>
         <h2>
-            Favourite trades
+            Your favourite trades
         </h2>
         {props.faves.length === 0 ? <div>Add favourite components</div> : componentWithFavTrades}
     </div>

@@ -52,8 +52,8 @@ export const Modal = (props: Props) => {
                         <h2>Trade Calculator: {props.info.symbol}</h2>
                         {
                             Number(props.info.priceChangePercent) > 0
-                            ? <div>{props.info.priceChangePercent}<img src={up} style={{width: '30px', paddingLeft: "10px"}}/></div>
-                            : <div>{props.info.priceChangePercent}<img src={down} style={{width: '30px', paddingLeft: "10px"}}/></div>
+                            ? <div>{props.info.priceChangePercent}%<img src={up} style={{width: '30px', paddingLeft: "10px"}}/></div>
+                            : <div>{props.info.priceChangePercent}%<img src={down} style={{width: '30px', paddingLeft: "10px"}}/></div>
                         }
                     </div>
                     <a href='#' className="close" onClick={props.onClose}></a>

@@ -1,6 +1,7 @@
 import React from "react";
 import { WholeTradeEntity } from "types";
 import {SingleTrade} from "./SingleTrade";
+import '../styles/SingleTrade.css'
 
 
 interface Props {
@@ -11,7 +12,7 @@ interface Props {
 
 export const AllTradesTable = (props: Props) => {
 
-    const response = <div>
+    const response = <div className="rootek">
             {
                 props.trades
                     .map((el) => {
