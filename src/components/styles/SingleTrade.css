@@ -1,0 +1,28 @@
+.singleTrade {
+    /*border: 2px solid #ffffff;*/
+    border-radius: 50px;
+    padding: 20px;
+    text-align: left;
+    background: #a61b19;
+    background-image: linear-gradient(96deg, #a61b19 0%, rgb(13, 16, 16) 80%);
+    margin: 5px;
+    width: 500px;
+}
+
+.singleFavTrade {
+    /*border: 2px solid #ffffff;*/
+    border-radius: 50px;
+    padding: 20px;
+    text-align: left;
+    background: #a61b19;
+    background-image: linear-gradient(96deg, #a61b19 0%, rgb(13, 16, 16) 80%);
+    margin: 5px;
+    width: 500px;
+}
+
+.rootek {
+    display: flex;
+    margin: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
