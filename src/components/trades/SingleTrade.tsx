@@ -5,6 +5,7 @@ import {Modal} from "../modal/Modal";
 import up from '../styles/Green_Arrow_Up_Darker.svg.png'
 import down from '../styles/900px-Red_Arrow_Down.svg.png'
 import '../styles/SingleTrade.css'
+import {Modal2} from "../modal/Modal2";
 
 interface Props {
     trade: WholeTradeEntity
@@ -15,6 +16,7 @@ interface Props {
 export const SingleTrade = (props: Props) => {
 
     const [openModal, setOpenModal] = useState<boolean>(false)
+    const [openModal2, setOpenModal2] = useState<boolean>(false)
     const [form, setForm] = useState<TradeEntity>({
         symbol: props.trade.symbol,
         userId: localStorage.getItem('token2') as string,
@@ -56,7 +58,9 @@ export const SingleTrade = (props: Props) => {
         <div className="options">
             {props.favs >= 5 ? '' : <button className="button1" onClick={updateList}>Add to the data base</button>}
             <button className="button2" onClick={() => setOpenModal(!openModal)}>Show modal</button>
+            <button className="button2" onClick={() => setOpenModal2(!openModal)}>More info</button>
             <Modal info={props.trade} isOpen={openModal} onClose={() => setOpenModal(false)}/>
+            <Modal2 info={props.trade} isOpen={openModal2} onClose={() => setOpenModal2(false)}/>
         </div>
     </div>
 }
