@@ -60,7 +60,7 @@
 
 .link:hover{
     transition : 1000ms;
-    color: #a61b19;
+    color: #cb9901;
 }
 
 .link2 {
@@ -70,8 +70,6 @@
     font-size: 25px;
     color: #fff;
     padding: 0px 100px;
-    /*border: 2px solid #ffffff;*/
-    /*border-radius: 50px;*/
     transition : 1000ms;
     transform: translateY(0);
     flex-direction: row;
@@ -85,6 +83,5 @@
     transition : 1000ms;
     transform : translateY(-0px);
     color: #a61b19;
-    /*border: solid 2px;*/
     padding: 0px 150px;
 }
