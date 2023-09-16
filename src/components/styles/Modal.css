@@ -64,3 +64,50 @@ header {
 .close:after {
     transform: rotate(-45deg);
 }
+
+
+.reset{
+    margin: 5px;
+    font-family: 'Fira Code', monospace;
+    font-weight: 0;
+    font-size: 12px;
+    color: #fff;
+    background-color: rgb(13, 16, 16);
+    padding: 8px 20px;
+    border: 2px solid rgb(13, 16, 16);
+    box-shadow: rgb(13, 16, 16) 0px 0px 0px 0px;
+    border-radius: 50px;
+    transition : 1000ms;
+    transform: translateY(0);
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.reset:hover{
+    transition : 1000ms;
+    transform : translateY(-0px);
+    background-color: #fff;
+    color: rgb(13, 16, 16);
+    border: solid 2px rgb(13, 16, 16);
+}
+
+.numberInput{
+    display: inline-block;
+    font-family: 'Fira Code', monospace;
+    font-weight: 0;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    padding: 6px 18px;
+    border: 2px solid #ffffff;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border-radius: 50px;
+    transition : 1000ms;
+    transform: translateY(0);
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    margin: 5px;
+}

@@ -1,6 +1,7 @@
 import React, {FormEvent, useState} from "react";
 import {MathEntity} from "types";
-import {Spinner} from "../spinner/Spinner";
+import '../styles/Modal.css'
+
 
 interface Props {
     val: string,
@@ -41,11 +42,13 @@ export const AddExpression = (props: Props) => {
                     <label>
                         Input value:<br/>
                         <input
+                            className="numberInput"
                             type="number"
+                            min="0"
                             value={form.entryNum as number}
                             onChange={e => updateForm('entryNum', e.target.value)}
                         />
-                        <input type="reset" value='Reset' onClick={addAnotherOneFromScratch}/>
+                        <button className="reset" onClick={addAnotherOneFromScratch}>Reset</button>
                     </label>
                 </p>
                 <p>Weighted average value: {props.val}</p>
