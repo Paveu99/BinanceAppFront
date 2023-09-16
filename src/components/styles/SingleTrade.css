@@ -9,6 +9,7 @@
     margin: 5px;
     width: 500px;
     align-items: center;
+    height: 160px;
 }
 
 .tradeName {
@@ -18,12 +19,14 @@
 
 .overalInfo {
     text-align: center;
-    width: 280px;
+    width: 220px;
 }
 
 .options {
+    display: flex;
     text-align: left;
     justify-content: center;
+    flex-direction: column;
 }
 
 .button1{
@@ -42,10 +45,10 @@
     flex-direction: row;
     align-items: center;
     cursor: pointer;
+    width: inherit;
 }
 
 .button1:hover{
-
     transition : 1000ms;
     padding: 8px 40px;
     transform : translateY(-0px);
@@ -70,10 +73,10 @@
     flex-direction: row;
     align-items: center;
     cursor: pointer;
+    width: 150px
 }
 
 .button2:hover{
-
     transition : 1000ms;
     padding: 8px 40px;
     transform : translateY(-0px);
@@ -83,7 +86,6 @@
 }
 
 .singleFavTrade {
-    /*border: 2px solid #ffffff;*/
     border-radius: 50px;
     padding: 20px;
     text-align: left;
