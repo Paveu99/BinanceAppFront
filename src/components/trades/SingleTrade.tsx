@@ -38,10 +38,22 @@ export const SingleTrade = (props: Props) => {
     }
 
     return <div className="singleTrade">
-        {props.trade.symbol}
-        {props.favs >= 5 ? '' : <button onClick={updateList}>Add to the data base</button>}
-        <button onClick={() => setOpenModal(!openModal)}>Show modal</button>
-        <Modal info={props.trade} isOpen={openModal} onClose={() => setOpenModal(false)}/>
-        {Number(props.trade.priceChangePercent) > 0 ? <img src={up} style={{width: '30px'}}/> : <img src={down} style={{width: '30px'}}/>}
+        <div className="overalInfo">
+            <div className="tradeName">
+                {props.trade.symbol}
+            </div>
+            <div className="priceChange">
+                {
+                    Number(props.trade.priceChangePercent) > 0
+                        ? <div>{props.trade.priceChangePercent}%<img src={up} style={{width: '30px', paddingLeft: "10px"}}/></div>
+                        : <div>{props.trade.priceChangePercent}%<img src={down} style={{width: '30px', paddingLeft: "10px"}}/></div>
+                }
+            </div>
+        </div>
+        <div className="options">
+            {props.favs >= 5 ? '' : <button className="button1" onClick={updateList}>Add to the data base</button>}
+            <button className="button2" onClick={() => setOpenModal(!openModal)}>Show modal</button>
+            <Modal info={props.trade} isOpen={openModal} onClose={() => setOpenModal(false)}/>
+        </div>
     </div>
 }

@@ -22,7 +22,9 @@ export const Header = () => {
         <header className='header'>
             <div className='subdiv'>
                 <h1 className="title">Binance App</h1>
-                {test ? user : login}
+                <div className="info">
+                    {test ? user : login}
+                </div>
             </div>
             <hr/>
             <div className="subdiv2">

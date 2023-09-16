@@ -1,5 +1,6 @@
 .singleTrade {
     /*border: 2px solid #ffffff;*/
+    display: flex;
     border-radius: 50px;
     padding: 20px;
     text-align: left;
@@ -7,6 +8,78 @@
     background-image: linear-gradient(96deg, #a61b19 0%, rgb(13, 16, 16) 80%);
     margin: 5px;
     width: 500px;
+    align-items: center;
+}
+
+.tradeName {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.overalInfo {
+    text-align: center;
+    width: 280px;
+}
+
+.options {
+    text-align: left;
+    justify-content: center;
+}
+
+.button1{
+    margin: 5px;
+    font-family: 'Fira Code', monospace;
+    font-weight: 0;
+    font-size: 12px;
+    color: #fff;
+    background-color: #cb9901;
+    padding: 8px 20px;
+    border: 2px solid #cb9901;
+    box-shadow: #cb9901 0px 0px 0px 0px;
+    border-radius: 50px;
+    transition : 1000ms;
+    transform: translateY(0);
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.button1:hover{
+
+    transition : 1000ms;
+    padding: 8px 40px;
+    transform : translateY(-0px);
+    background-color: #fff;
+    color: #cb9901;
+    border: solid 2px #cb9901;
+}
+
+.button2{
+    margin: 5px;
+    font-family: 'Fira Code', monospace;
+    font-weight: 0;
+    font-size: 12px;
+    color: #fff;
+    background-color: rgb(13, 16, 16);
+    padding: 8px 20px;
+    border: 2px solid rgb(13, 16, 16);
+    box-shadow: rgb(13, 16, 16) 0px 0px 0px 0px;
+    border-radius: 50px;
+    transition : 1000ms;
+    transform: translateY(0);
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.button2:hover{
+
+    transition : 1000ms;
+    padding: 8px 40px;
+    transform : translateY(-0px);
+    background-color: #fff;
+    color: rgb(13, 16, 16);
+    border: solid 2px rgb(13, 16, 16);
 }
 
 .singleFavTrade {
@@ -14,8 +87,8 @@
     border-radius: 50px;
     padding: 20px;
     text-align: left;
-    background: #a61b19;
-    background-image: linear-gradient(96deg, #a61b19 0%, rgb(13, 16, 16) 80%);
+    background: #cb9901;
+    background-image: linear-gradient(96deg, #cb9901 0%, rgb(13, 16, 16) 80%);
     margin: 5px;
     width: 500px;
 }
