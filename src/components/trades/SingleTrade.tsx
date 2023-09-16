@@ -20,6 +20,10 @@ export const SingleTrade = (props: Props) => {
         userId: localStorage.getItem('token2') as string,
         weightedAvgPrice: props.trade.weightedAvgPrice,
         priceChangePercent: props.trade.priceChangePercent,
+        openPrice: props.trade.openPrice,
+        highPrice: props.trade.highPrice,
+        lowPrice: props.trade.lowPrice,
+        lastPrice: props.trade.lastPrice
     })
     const updateList = async (e: FormEvent) =>{
         e.preventDefault()
@@ -31,7 +35,6 @@ export const SingleTrade = (props: Props) => {
                 },
                 body: JSON.stringify(form),
             })
-            console.log(await res.json())
         } finally {
             props.refresh()
         }
