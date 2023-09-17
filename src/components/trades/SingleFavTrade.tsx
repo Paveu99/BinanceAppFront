@@ -3,6 +3,7 @@ import {TradeEntity} from "types";
 import {Modal} from "../modal/Modal";
 import up from "../styles/Green_Arrow_Up_Darker.svg.png";
 import down from "../styles/900px-Red_Arrow_Down.svg.png";
+import '../styles/SingleFavTrade.css'
 
 interface Props {
     trade: TradeEntity
@@ -31,18 +32,16 @@ export const SingleFavTrade = (props: Props) => {
     }
 
     const response = <div className="singleFavTrade">
-        <div className="overalInfo">
-            <div className="tradeName">
-                {props.trade.symbol}
-            </div>
+        <div className="tradeName2">
+            {props.trade.symbol}
         </div>
-        <div className="info">
-            <div className="main">
-                <div className="spec">
-                    <div className="desc">
+        <div className="info2">
+            <div className="main2">
+                <div className="spec2">
+                    <div className="desc2">
                         Price Change Percent
                     </div>
-                    <div className="value">
+                    <div className="value2">
                         {
                             Number(props.trade.priceChangePercent) > 0
                                 ? <div>{props.trade.priceChangePercent}%<img src={up} style={{width: '30px', paddingLeft: "10px"}}/></div>
@@ -51,60 +50,61 @@ export const SingleFavTrade = (props: Props) => {
                     </div>
                 </div>
                 <hr/>
-                <div className="spec">
-                    <div className="desc">
+                <div className="spec2">
+                    <div className="desc2">
                         Weighted Average Price
                     </div>
-                    <div className="value">
+                    <div className="value2">
                         {props.trade.weightedAvgPrice}
                     </div>
                 </div>
             </div>
-            <div className="detailed">
-                <div className="upper">
-                    <div className="spec">
-                        <div className="desc">
+            <div className="detailed2">
+                <div className="upper2">
+                    <div className="spec2">
+                        <div className="desc2">
                             Open Price
                         </div>
-                        <div className="value">
+                        <div className="value2">
                             {props.trade.openPrice}
                         </div>
                     </div>
                     <hr/>
-                    <div className="spec">
-                        <div className="desc">
+                    <div className="spec2">
+                        <div className="desc2">
                             Last Price
                         </div>
-                        <div className="value">
+                        <div className="value2">
                             {props.trade.lastPrice}
                         </div>
                     </div>
                 </div>
                 <hr/>
-                <div className="lower">
-                    <div className="spec">
-                        <div className="desc">
+                <div className="lower2">
+                    <div className="spec2">
+                        <div className="desc2">
                             High Price
                         </div>
-                        <div className="value">
+                        <div className="value2">
                             {props.trade.highPrice}
                         </div>
                     </div>
                     <hr/>
-                    <div className="spec">
-                        <div className="desc">
+                    <div className="spec2">
+                        <div className="desc2">
                             Low Price
                         </div>
-                        <div className="value">
+                        <div className="value2">
                             {props.trade.lowPrice}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <button className="button" onClick={deleteTrade}>Delete</button>
-        <button  className="button" onClick={() => setOpenModal(!openModal)}>Show modal</button>
-        <Modal info={props.trade} isOpen={openModal} onClose={() => setOpenModal(false)}/>
+        <div className="buttons">
+            <button className="button" onClick={deleteTrade}>Delete from favourites</button>
+            <button  className="button" onClick={() => setOpenModal(!openModal)}>Calculator</button>
+        </div><Modal info={props.trade} isOpen={openModal} onClose={() => setOpenModal(false)}/>
     </div>
 
     return (response)
