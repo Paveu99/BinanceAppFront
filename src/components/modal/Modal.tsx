@@ -49,7 +49,7 @@ export const Modal = (props: Props) => {
             <div className='react-modal-content'>
                 <header>
                     <div>
-                        <h2>Trade Calculator: {props.info.symbol}</h2>
+                        <h2 style={{fontWeight: "bold"}}>Trade Calculator: {props.info.symbol}</h2>
                         {
                             Number(props.info.priceChangePercent) > 0
                             ? <div>{props.info.priceChangePercent}%<img src={up} style={{width: '30px', paddingLeft: "10px"}}/></div>
