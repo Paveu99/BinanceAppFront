@@ -85,16 +85,6 @@
     border: solid 2px rgb(13, 16, 16);
 }
 
-.singleFavTrade {
-    border-radius: 50px;
-    padding: 20px;
-    text-align: left;
-    background: #cb9901;
-    background-image: linear-gradient(96deg, #cb9901 0%, rgb(13, 16, 16) 80%);
-    margin: 5px;
-    width: 500px;
-}
-
 .rootek {
     display: flex;
     margin: 5px;
