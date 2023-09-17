@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {TradeEntity} from "types";
 import {SingleFavTrade} from "./SingleFavTrade";
-import {Spinner} from "../spinner/Spinner";
 
 interface Props {
     faves: TradeEntity[]
@@ -18,9 +17,6 @@ export const FavouriteTrades = (props: Props) => {
     </div>
 
     const favTrades = <div>
-        <h2>
-            Your favourite trades
-        </h2>
         {props.faves.length === 0 ? <div>Add favourite components</div> : componentWithFavTrades}
     </div>
 
