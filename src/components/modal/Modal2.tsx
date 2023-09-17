@@ -49,39 +49,73 @@ export const Modal2 = (props: Props) => {
             <div className='react-modal-content'>
                 <header>
                     <div>
-                        <h2>More info: {props.info.symbol}</h2>
+                        <h2 style={{fontWeight: "bold"}}>More info: {props.info.symbol}</h2>
                     </div>
                     <a href='#' className="close" onClick={props.onClose}></a>
                 </header>
                 <hr/>
                 <div className="info">
                     <div className="main">
-                        <div>
-                            {
-                                Number(props.info.priceChangePercent) > 0
-                                    ? <div>{props.info.priceChangePercent}%<img src={up} style={{width: '30px', paddingLeft: "10px"}}/></div>
-                                    : <div>{props.info.priceChangePercent}%<img src={down} style={{width: '30px', paddingLeft: "10px"}}/></div>
-                            }
+                        <div className="spec">
+                            <div className="desc">
+                                Price Change Percent
+                            </div>
+                            <div className="value">
+                                {
+                                    Number(props.info.priceChangePercent) > 0
+                                        ? <div>{props.info.priceChangePercent}%<img src={up} style={{width: '30px', paddingLeft: "10px"}}/></div>
+                                        : <div>{props.info.priceChangePercent}%<img src={down} style={{width: '30px', paddingLeft: "10px"}}/></div>
+                                }
+                            </div>
                         </div>
-                        <div>
-                            {props.info.weightedAvgPrice}
+                        <hr/>
+                        <div className="spec">
+                            <div className="desc">
+                                Weighted Average Price
+                            </div>
+                            <div className="value">
+                                {props.info.weightedAvgPrice}
+                            </div>
                         </div>
                     </div>
                     <div className="detailed">
                         <div className="upper">
-                            <div>
-                                {props.info.openPrice}
+                            <div className="spec">
+                                <div className="desc">
+                                    Open Price
+                                </div>
+                                <div className="value">
+                                    {props.info.openPrice}
+                                </div>
                             </div>
-                            <div>
-                                {props.info.lastPrice}
+                            <hr/>
+                            <div className="spec">
+                                <div className="desc">
+                                    Last Price
+                                </div>
+                                <div className="value">
+                                    {props.info.lastPrice}
+                                </div>
                             </div>
                         </div>
+                        <hr/>
                         <div className="lower">
-                            <div>
-                                {props.info.highPrice}
+                            <div className="spec">
+                                <div className="desc">
+                                    High Price
+                                </div>
+                                <div className="value">
+                                    {props.info.highPrice}
+                                </div>
                             </div>
-                            <div>
-                                {props.info.lowPrice}
+                            <hr/>
+                            <div className="spec">
+                                <div className="desc">
+                                    Low Price
+                                </div>
+                                <div className="value">
+                                    {props.info.lowPrice}
+                                </div>
                             </div>
                         </div>
                     </div>
