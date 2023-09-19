@@ -3,6 +3,8 @@ import {CreateUserReq, UserEntity } from "types";
 import {Spinner} from "../spinner/Spinner";
 import { NavLink } from "react-router-dom";
 import {UpdateEmailType} from "../../../../BinanceAppBack/types/user/user";
+import '../styles/Edit.css'
+
 
 interface Props {
     refresh: () => void
@@ -88,15 +90,17 @@ export const EditEmailForm = (props: Props) => {
         <p>
             <label>
                 e-mail: <br/>
+                <em style={{fontSize: 'x-small'}}>must contain "@"</em>
+                <br/>
                 <input
                     type="text"
                     name="email"
+                    className="input"
                     value={form.email}
                     onChange={e => change('email', e.target.value)}
                 />
             </label>
         </p>
-        <em style={{fontSize: 'x-small'}}>must contain "@"</em>
-        <p><button type="submit" className="submitbutton">Zmień</button></p>
+        <p><button type="submit" className="download2">Change</button></p>
     </form>
 }

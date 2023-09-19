@@ -1,5 +1,7 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
+import '../styles/Edit.css'
+
 
 interface Props {
     id: string
@@ -27,11 +29,12 @@ export const DeleteUserForm = (props: Props) => {
     }
 
     return (<>
-            <h1>Are you sure about that?</h1>
+            <h3>Are you sure you want to delete your account about that?</h3>
+            <p>(this action will permanently delete your data)</p>
             <div className='decision'>
-                <button className='submitbutton' onClick={logout}>Yes</button>
+                <button className='download' onClick={logout}>Yes</button>
                 <NavLink to="/">
-                    <button className='submitbutton'>No</button>
+                    <button className='download3'>No</button>
                 </NavLink>
             </div>
         </>
