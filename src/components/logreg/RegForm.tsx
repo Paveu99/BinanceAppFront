@@ -94,72 +94,80 @@ export const RegForm = () => {
         <p>
             <label>
                 Name: <br/>
+                <em style={{fontSize: 'x-small'}}>must be at least 3 characters long</em>
+                <br/>
                 <input
                     type="text"
                     name="name"
+                    className="input"
                     value={form.name}
                     onChange={e => change('name', e.target.value)}
                 />
             </label>
         </p>
-        <em style={{fontSize: 'x-small'}}>must be at least 3 characters long</em>
         <p>
             <label>
                 Surname: <br/>
+                <em style={{fontSize: 'x-small'}}>must be at least 3 characters long</em>
+                <br/>
                 <input
                     type="text"
                     name="surname"
+                    className="input"
                     value={form.surname}
                     onChange={e => change('surname', e.target.value)}
                 />
             </label>
         </p>
-        <em style={{fontSize: 'x-small'}}>must be at least 3 characters long</em>
         <p>
             <label>
                 e-mail: <br/>
+                <em style={{fontSize: 'x-small'}}>must contain "@"</em>
+                <br/>
                 <input
                     type="text"
                     name="email"
+                    className="input"
                     value={form.email}
                     onChange={e => change('email', e.target.value)}
                 />
             </label>
         </p>
-        <em style={{fontSize: 'x-small'}}>must contain "@"</em>
         <p>
             <label>
                 Password: <br/>
+                <em style={{fontSize: 'x-small'}}>must be at least 8 characters long</em>
+                <br/>
                 <input
                     type={inputType1}
                     name="password"
+                    className="input"
                     value={form.password}
                     onChange={e => change('password', e.target.value)}
                 />
-                <button type="reset" onMouseDown={showPassword1} onMouseUp={hidePassword1} onMouseOut={hidePassword1}
-                        style={{height: '26px'}}>
-                    {inputType1 === 'password' ? '👁' : '🧿'}
+                <button type="reset" className="download4" onMouseDown={showPassword1} onMouseUp={hidePassword1} onMouseOut={hidePassword1}>
+                    {'👁'}
                 </button>
             </label>
         </p>
-        <em style={{fontSize: 'x-small'}}>must be at least 8 characters long</em>
         <p>
           <label>
-            Hasło - potwierdzenie: <br/>
+            Password - confirmation: <br/>
+              <em style={{fontSize: 'x-small'}}>must be the same</em>
+              <br/>
             <input
               type={inputType2}
               name="passwordConfirmation"
+              className="input"
               value={form.passwordConfirmation}
               onChange={e => change('passwordConfirmation', e.target.value)}
             />
-            <button type="reset" onMouseDown={showPassword2} onMouseUp={hidePassword2} onMouseOut={hidePassword2}
-                    style={{ height: '26px' }}>
-              {inputType2 === 'password' ? '👁' : '🧿'}
+            <button type="reset" className="download4" onMouseDown={showPassword2} onMouseUp={hidePassword2} onMouseOut={hidePassword2}>
+              {'👁'}
             </button>
           </label>
-          <em style={{fontSize: 'x-small'}}>musi być identyczne jak hasło</em>
         </p>
-        <button type="submit" className="submitbutton">Zarejestruj</button>
+        <button type="submit" className="download2">Register</button>
     </form>
 
 }
