@@ -8,6 +8,7 @@ import {SearchComponent} from "../search/SearchComponent";
 import { FavouriteTrades } from "./FavouriteTrades";
 import '../styles/Filters.css'
 import down from "../styles/toppng.com-up-arrow-top-image-png-white-392x241.png";
+import { DownloadBttn } from "../download/DownloadBttn";
 
 export const AllTradesList = () => {
 
@@ -140,7 +141,7 @@ export const AllTradesList = () => {
         <br/>
         <h2 ref={ref1}>
             All trades
-            <img className="arrowDown" onClick={handleClick2} src={down} style={{marginLeft: "10px", width: '30px'}} title="Go to Your Favourite Trades" />
+            <img className="arrowUp" onClick={handleClick2} src={down} style={{marginLeft: "10px", width: '30px'}} title="Go to Your Favourite Trades" />
         </h2>
         <SearchComponent page={() => setCurrentPage(1)}/>
         <div className="label">Filters:</div>
@@ -155,6 +156,7 @@ export const AllTradesList = () => {
                     <option value="Z-A">Z-A</option>
                 </select>
         </div>
+        <DownloadBttn trades={filteredTrades}/>
         {filteredTrades.length === 0 ? noRseults : allTrades}
         <Pagination
             paginate={paginate}

@@ -1,0 +1,25 @@
+.download {
+    margin: 5px;
+    font-family: 'Fira Code', monospace;
+    font-weight: 0;
+    font-size: 12px;
+    color: #fff;
+    background-color: #a61b19;
+    padding: 8px 20px;
+    border: 2px solid #a61b19;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border-radius: 50px;
+    transition : 1000ms;
+    transform: translateY(0);
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.download:hover{
+    transition : 1000ms;
+    transform : translateY(-0px);
+    background-color: #fff;
+    color: #a61b19;
+    border: solid 2px #a61b19;
+}
