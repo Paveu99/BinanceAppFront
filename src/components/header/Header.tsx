@@ -14,7 +14,7 @@ export const Header = () => {
         })()
     }, [])
 
-    const login = <Link className="link" style={{textDecoration: "none"}} to="/user">Login</Link>
+    const login = <Link className="link" style={{textDecoration: "none"}} to="/user">Log in</Link>
 
     const user = <LocalView/>
 

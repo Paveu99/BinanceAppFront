@@ -11,7 +11,7 @@ export const LocalView = () => {
             </b>
             |
             <b>
-                <Link className="link" style={{textDecoration: "none"}} to="/user/logout">Logout</Link>
+                <Link className="link" style={{textDecoration: "none"}} to="/user/logout">Log out</Link>
             </b>
         </div>
     )
