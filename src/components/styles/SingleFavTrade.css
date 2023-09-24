@@ -85,3 +85,11 @@
     color: #000000;
     border: solid 2px #000000;
 }
+
+.rootek2 {
+    display: flex;
+    margin: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}

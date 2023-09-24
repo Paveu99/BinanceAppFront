@@ -137,7 +137,7 @@ export const AllTradesList = () => {
             Your favourite trades
             <img className="arrowDown" onClick={handleClick} src={down} style={{marginLeft: "10px", width: '30px', transform: 'rotate(180deg)'}} title="Go to All Trades" />
         </h2>
-        {!favoutireTradeList ? <Spinner/> : <div className="rootek"><FavouriteTrades refresh = {refreshFavouriteList} faves={favoutireTradeList}/></div>}
+        {!favoutireTradeList ? <Spinner/> : <div><FavouriteTrades refresh = {refreshFavouriteList} faves={favoutireTradeList}/></div>}
         <br/>
         <h2 ref={ref1}>
             All trades
