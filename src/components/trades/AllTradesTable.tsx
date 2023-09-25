@@ -1,5 +1,5 @@
 import React from "react";
-import { WholeTradeEntity } from "types";
+import {TradeEntity, WholeTradeEntity } from "types";
 import {SingleTrade} from "./SingleTrade";
 import '../styles/SingleTrade.css'
 
@@ -7,7 +7,8 @@ import '../styles/SingleTrade.css'
 interface Props {
     trades: WholeTradeEntity[],
     refresh: () => void,
-    favsLen: number
+    favsLen: number,
+    favs: TradeEntity[]
 }
 
 export const AllTradesTable = (props: Props) => {
@@ -16,7 +17,7 @@ export const AllTradesTable = (props: Props) => {
             {
                 props.trades
                     .map((el) => {
-                        return (<SingleTrade refresh={props.refresh} trade={el} key={el.symbol} favs={props.favsLen}/>)
+                        return (<SingleTrade refresh={props.refresh} trade={el} key={el.symbol} favsLen={props.favsLen} favs={props.favs}/>)
                     })
             }
     </div>

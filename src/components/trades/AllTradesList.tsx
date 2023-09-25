@@ -130,7 +130,7 @@ export const AllTradesList = () => {
         setCurrentPage(pageNumber);
     }
 
-    const allTrades = <AllTradesTable refresh={refreshFavouriteList} trades={currentPosts} favsLen={favoutireTradeList?.length as number}/>
+    const allTrades = <AllTradesTable refresh={refreshFavouriteList} trades={currentPosts} favsLen={favoutireTradeList?.length as number} favs={favoutireTradeList as []}/>
 
     return <div style={{textAlign: "center", marginTop: "20px", justifyContent: "center"}}>
         <h2 ref={ref2}>

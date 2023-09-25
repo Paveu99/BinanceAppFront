@@ -10,7 +10,8 @@ import {Modal2} from "../modal/Modal2";
 interface Props {
     trade: WholeTradeEntity
     refresh: () => void
-    favs: number
+    favsLen: number
+    favs: TradeEntity[]
 }
 
 export const SingleTrade = (props: Props) => {
@@ -30,7 +31,7 @@ export const SingleTrade = (props: Props) => {
     const updateList = async (e: FormEvent) =>{
         e.preventDefault()
         try {
-            const res = await fetch('http://localhost:3001/trades', {
+            await fetch('http://localhost:3001/trades', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -39,6 +40,16 @@ export const SingleTrade = (props: Props) => {
             })
         } finally {
             props.refresh()
+        }
+    }
+
+    const contain = () => {
+        if (props.favs) {
+            for (const el of props.favs) {
+                if (el.symbol === form.symbol) {
+                    return true
+                }
+            }
         }
     }
 
@@ -56,7 +67,7 @@ export const SingleTrade = (props: Props) => {
             </div>
         </div>
         <div className="options">
-            {props.favs >= 5 ? '' : <button className="button1" onClick={updateList}>Add to the data base</button>}
+            {(props.favsLen >= 5 || contain()) ? '' : <button className="button1" onClick={updateList}>Add to the data base</button>}
             <button className="button2" onClick={() => setOpenModal(!openModal)}>Calculator</button>
             <button className="button2" onClick={() => setOpenModal2(!openModal)}>More info</button>
             <Modal info={props.trade} isOpen={openModal} onClose={() => setOpenModal(false)}/>
