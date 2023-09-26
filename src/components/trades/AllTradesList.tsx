@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext, useEffect, useRef, useState} from "react";
 import {TradeEntity, WholeTradeEntity} from "../../../../BinanceAppBack/types/trade/trade.entity";
 import {Spinner} from "../spinner/Spinner";
 import {SearchContext} from "../search/SearchContext";
@@ -7,9 +7,20 @@ import {AllTradesTable} from "./AllTradesTable";
 import {SearchComponent} from "../search/SearchComponent";
 import { FavouriteTrades } from "./FavouriteTrades";
 import '../styles/Filters.css'
+import down from "../styles/toppng.com-up-arrow-top-image-png-white-392x241.png";
+import { DownloadBttn } from "../download/DownloadBttn";
 
 export const AllTradesList = () => {
 
+    const ref1 = useRef<null | HTMLHeadingElement>(null);
+    const ref2 = useRef<null | HTMLHeadingElement>(null);
+    const handleClick = () => {
+        ref1.current?.scrollIntoView({behavior: 'smooth'});
+    };
+
+    const handleClick2 = () => {
+        ref2.current?.scrollIntoView({behavior: 'smooth'});
+    };
     const {search} = useContext(SearchContext)
 
     const [option, setOption] = useState<string>('includes')
@@ -119,12 +130,19 @@ export const AllTradesList = () => {
         setCurrentPage(pageNumber);
     }
 
-    const allTrades = <AllTradesTable refresh={refreshFavouriteList} trades={currentPosts} favsLen={favoutireTradeList?.length as number}/>
+    const allTrades = <AllTradesTable refresh={refreshFavouriteList} trades={currentPosts} favsLen={favoutireTradeList?.length as number} favs={favoutireTradeList as []}/>
 
     return <div style={{textAlign: "center", marginTop: "20px", justifyContent: "center"}}>
-        {!favoutireTradeList ? <Spinner/> : <div className="rootek"><FavouriteTrades refresh = {refreshFavouriteList} faves={favoutireTradeList}/></div>}
+        <h2 ref={ref2}>
+            Your favourite trades
+            <img className="arrowDown" onClick={handleClick} src={down} style={{marginLeft: "10px", width: '30px', transform: 'rotate(180deg)'}} title="Go to All Trades" />
+        </h2>
+        {!favoutireTradeList ? <Spinner/> : <div><FavouriteTrades refresh = {refreshFavouriteList} faves={favoutireTradeList}/></div>}
         <br/>
-        <h2>All trades</h2>
+        <h2 ref={ref1}>
+            All trades
+            <img className="arrowUp" onClick={handleClick2} src={down} style={{marginLeft: "10px", width: '30px'}} title="Go to Your Favourite Trades" />
+        </h2>
         <SearchComponent page={() => setCurrentPage(1)}/>
         <div className="label">Filters:</div>
         <div className="select">
@@ -138,6 +156,7 @@ export const AllTradesList = () => {
                     <option value="Z-A">Z-A</option>
                 </select>
         </div>
+        <DownloadBttn trades={filteredTrades}/>
         {filteredTrades.length === 0 ? noRseults : allTrades}
         <Pagination
             paginate={paginate}

@@ -3,6 +3,7 @@ import {CreateUserReq, UserEntity } from "types";
 import {Spinner} from "../spinner/Spinner";
 import { NavLink } from "react-router-dom";
 import {UpdateEmailType, UpdateNameSurnameType} from "../../../../BinanceAppBack/types/user/user";
+import '../styles/Edit.css'
 
 interface Props {
     refresh: () => void
@@ -89,27 +90,31 @@ export const EditNameSurnameForm = (props: Props) => {
         <p>
             <label>
                 Name: <br/>
+                <em style={{fontSize: 'x-small'}}>must be at least 3 characters long</em>
+                <br/>
                 <input
                     type="text"
                     name="name"
+                    className="input"
                     value={form.name}
                     onChange={e => change('name', e.target.value)}
                 />
             </label>
         </p>
-        <em style={{fontSize: 'x-small'}}>must be at least 3 characters long</em>
         <p>
             <label>
                 Surname: <br/>
+                <em style={{fontSize: 'x-small'}}>must be at least 3 characters long</em>
+                <br/>
                 <input
                     type="text"
                     name="surname"
+                    className="input"
                     value={form.surname}
                     onChange={e => change('surname', e.target.value)}
                 />
             </label>
         </p>
-        <em style={{fontSize: 'x-small'}}>must be at least 3 characters long</em>
-        <p><button type="submit" className="submitbutton">Zmień</button></p>
+        <p><button type="submit" className="download2">Change</button></p>
     </form>
 }

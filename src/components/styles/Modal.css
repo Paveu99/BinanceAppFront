@@ -111,3 +111,34 @@ header {
     text-align: center;
     margin: 5px;
 }
+
+.info {
+    display: flex;
+    flex-direction: row;
+}
+
+.main {
+    width: 50%;
+    align-items: center;
+}
+
+.detailed {
+    width: 50%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.spec {
+    margin-top: 10px;
+}
+
+.desc {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.value {
+    font-size: 20px;
+}

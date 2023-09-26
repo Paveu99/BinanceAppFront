@@ -1,0 +1,103 @@
+.download {
+    margin: 5px;
+    font-family: 'Fira Code', monospace;
+    font-weight: 0;
+    font-size: 12px;
+    color: #fff;
+    background-color: #a61b19;
+    padding: 8px 20px;
+    border: 2px solid #a61b19;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border-radius: 50px;
+    transition : 1000ms;
+    transform: translateY(0);
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.download:hover{
+    transition : 1000ms;
+    transform : translateY(-0px);
+    background-color: #fff;
+    color: #a61b19;
+    border: solid 2px #a61b19;
+}
+
+.download2 {
+    margin: 5px;
+    font-family: 'Fira Code', monospace;
+    font-weight: 0;
+    font-size: 12px;
+    color: #fff;
+    background-color: #cb9901;
+    padding: 8px 20px;
+    border: 2px solid #cb9901;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border-radius: 50px;
+    transition : 1000ms;
+    transform: translateY(0);
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.download2:hover{
+    transition : 1000ms;
+    transform : translateY(-0px);
+    background-color: #fff;
+    color: #cb9901;
+    border: solid 2px #cb9901;
+}
+
+.download3 {
+    margin: 5px;
+    font-family: 'Fira Code', monospace;
+    font-weight: 0;
+    font-size: 12px;
+    color: #fff;
+    background-color: #2dcb01;
+    padding: 8px 20px;
+    border: 2px solid #2dcb01;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border-radius: 50px;
+    transition : 1000ms;
+    transform: translateY(0);
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.download3:hover{
+    transition : 1000ms;
+    transform : translateY(-0px);
+    background-color: #fff;
+    color: #2dcb01;
+    border: solid 2px #2dcb01;
+}
+
+.download4 {
+    margin: 5px;
+    font-family: 'Fira Code', monospace;
+    font-weight: 0;
+    font-size: 12px;
+    color: #fff;
+    background-color: #a61b19;
+    padding: 8px;
+    border: 2px solid #a61b19;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border-radius: 50px;
+    transition : 1000ms;
+    transform: translateY(0);
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.download4:active{
+    transition : 1000ms;
+    transform : translateY(-0px);
+    background-color: #fff;
+    color: #a61b19;
+    border: solid 2px #a61b19;
+}

@@ -1,8 +1,6 @@
 import React, {FormEvent, useState} from "react";
-import { UserEntity } from "types";
 import {Spinner} from "../spinner/Spinner";
 import {RegForm} from "./RegForm";
-import { NavLink } from "react-router-dom";
 
 interface Props {
     refresh: () => void
@@ -89,6 +87,7 @@ export const LogForm = (props: Props) => {
                 <input
                     type="text"
                     name="email"
+                    className="input"
                     value={form.email}
                     onChange={e => change('email', e.target.value)}
                 />
@@ -100,22 +99,22 @@ export const LogForm = (props: Props) => {
                 <input
                     type={inputType}
                     name="password"
+                    className="input"
                     value={form.password}
                     onChange={e => change('password', e.target.value)}
                 />
-                <button type="reset" onMouseDown={showPassword} onMouseUp={hidePassword} onMouseOut={hidePassword}
-                        style={{height: '26px'}}>
-                    {inputType === 'password' ? '👁' : '🧿'}
+                <button type="reset" className="download4" onMouseDown={showPassword} onMouseUp={hidePassword} onMouseOut={hidePassword}>
+                    {'👁'}
                 </button>
             </label>
         </p>
-        <button type="submit" className="submitbutton">Zaloguj</button>
+        <button type="submit" className="download2">Log in</button>
     </form>
 
-    return <div className="wholeThing">
+    return <div className="editView">
         <div className="guidePanel">
-            <a className="LoginBttn" href="#" onClick={() => setFormType('logowanie')}>Login</a> | <a
-            className="RegBttn" href="#" onClick={() => setFormType('rejestracja')}>Registration</a>
+            <button className="download" onClick={() => setFormType('logowanie')}>Login</button> | <button
+            className="download" onClick={() => setFormType('rejestracja')}>Registration</button>
         </div>
         <div className="name">
             {formType === 'rejestracja' ? <h1>Registration</h1> : <h1>Login</h1>}

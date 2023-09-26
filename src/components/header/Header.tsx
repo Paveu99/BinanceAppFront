@@ -14,14 +14,14 @@ export const Header = () => {
         })()
     }, [])
 
-    const login = <Link className="link" style={{textDecoration: "none"}} to="/user">Login</Link>
+    const login = <Link className="link" style={{textDecoration: "none"}} to="/user">Log in</Link>
 
     const user = <LocalView/>
 
     return (
         <header className='header'>
             <div className='subdiv'>
-                <h1 className="title">Binance App</h1>
+                <h1 className="title">BINANCE APP</h1>
                 <div className="info">
                     {test ? user : login}
                 </div>
