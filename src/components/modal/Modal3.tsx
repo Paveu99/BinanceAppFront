@@ -16,6 +16,8 @@ export interface IData {
 
 interface BarChartProps {
     data: IData[];
+    sizeX: number;
+    sizeY: number
 }
 
 interface AxisBottomProps {
@@ -75,10 +77,10 @@ function Bars({ data, height, scaleX, scaleY }: BarsProps) {
     );
 }
 
-export function BarChart({ data }: BarChartProps) {
+export function BarChart({ data, sizeX, sizeY }: BarChartProps) {
     const margin = { top: 10, right: 0, bottom: 20, left: 30 };
-    const width = 600 - margin.left - margin.right;
-    const height = 300 - margin.top - margin.bottom;
+    const width = sizeX - margin.left - margin.right;
+    const height = sizeY - margin.top - margin.bottom;
 
     const scaleX = scaleBand()
         .domain(data.map(({ label }) => label))
