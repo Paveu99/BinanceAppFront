@@ -4,6 +4,8 @@ import {Modal} from "../modal/Modal";
 import up from "../styles/Green_Arrow_Up_Darker.svg.png";
 import down from "../styles/900px-Red_Arrow_Down.svg.png";
 import '../styles/SingleFavTrade.css'
+import { BarChart } from "../modal/Modal3";
+import {IData} from "../modal/Modal2";
 
 interface Props {
     trade: TradeEntity
@@ -12,7 +14,28 @@ interface Props {
 export const SingleFavTrade = (props: Props) => {
 
     const [openModal, setOpenModal] = useState<boolean>(false)
-
+    const [data, setData] = useState<IData[]>([
+        {
+            label: "Weighted Average Price",
+            value: Number(props.trade.weightedAvgPrice)
+        },
+        {
+            label: "Open Price",
+            value: Number(props.trade.openPrice)
+        },
+        {
+            label: "Last Price",
+            value: Number(props.trade.lastPrice)
+        },
+        {
+            label: "High Price",
+            value: Number(props.trade.highPrice)
+        },
+        {
+            label: "Low Price",
+            value: Number(props.trade.lowPrice)
+        },
+    ])
     const deleteTrade = async () => {
         if (!window.confirm(`Are you sure you want to remove this trade`)) {
             return;
@@ -100,6 +123,9 @@ export const SingleFavTrade = (props: Props) => {
                     </div>
                 </div>
             </div>
+        </div>
+        <div className="chart">
+            <BarChart data={data} sizeX={500} sizeY={150}></BarChart>
         </div>
         <div className="buttons">
             <button className="button" onClick={deleteTrade}>Delete from favourites</button>
