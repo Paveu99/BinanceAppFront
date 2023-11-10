@@ -147,7 +147,7 @@ export const Modal2 = (props: Props) => {
                         </div>
                     </div>
                 </div>
-                <BarChart data={data} sizeX={600} sizeY={300}></BarChart>
+                <BarChart data={data} sizeX={600} sizeY={300} color={'white'}></BarChart>
             </div>
         </animated.div>
     </animated.div>

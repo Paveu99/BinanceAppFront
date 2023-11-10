@@ -17,7 +17,8 @@ export interface IData {
 interface BarChartProps {
     data: IData[];
     sizeX: number;
-    sizeY: number
+    sizeY: number;
+    color: string;
 }
 
 interface AxisBottomProps {
@@ -34,6 +35,7 @@ interface BarsProps {
     height: number;
     scaleX: AxisBottomProps["scale"];
     scaleY: AxisLeftProps["scale"];
+    color: string;
 }
 
 function AxisBottom({ scale, transform }: AxisBottomProps) {
@@ -60,7 +62,7 @@ function AxisLeft({ scale }: AxisLeftProps) {
     return <g ref={ref} />;
 }
 
-function Bars({ data, height, scaleX, scaleY }: BarsProps) {
+function Bars({ data, height, scaleX, scaleY, color }: BarsProps) {
     return (
         <>
             {data.map(({ value, label }) => (
@@ -70,14 +72,14 @@ function Bars({ data, height, scaleX, scaleY }: BarsProps) {
                     y={scaleY(value)}
                     width={scaleX.bandwidth()}
                     height={height - scaleY(value)}
-                    fill="white"
+                    fill={color}
                 />
             ))}
         </>
     );
 }
 
-export function BarChart({ data, sizeX, sizeY }: BarChartProps) {
+export function BarChart({ data, sizeX, sizeY, color }: BarChartProps) {
     const margin = { top: 10, right: 0, bottom: 20, left: 30 };
     const width = sizeX - margin.left - margin.right;
     const height = sizeY - margin.top - margin.bottom;
@@ -98,7 +100,7 @@ export function BarChart({ data, sizeX, sizeY }: BarChartProps) {
             <g transform={`translate(${margin.left}, ${margin.top})`}>
                 <AxisBottom scale={scaleX} transform={`translate(0, ${height})`} />
                 <AxisLeft scale={scaleY} />
-                <Bars data={data} height={height} scaleX={scaleX} scaleY={scaleY} />
+                <Bars data={data} height={height} scaleX={scaleX} scaleY={scaleY} color={color}/>
             </g>
         </svg>
     );
