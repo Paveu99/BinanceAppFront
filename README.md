@@ -23,4 +23,5 @@ Client side was created using:
 - tachyons": 4.12.0,
 - xlsx: 0.18.5,
 - sweetpagination: 1.0.15,
-- customize-cra: 1.0.0.
+- customize-cra: 1.0.0,
+- d3: 7.8.5.
