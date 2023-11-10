@@ -1,15 +1,19 @@
-import React, { useEffect } from "react";
+import React, {useEffect, useState} from "react";
 import {useSpring, animated, useTransition} from "@react-spring/web"
 import '../styles/Modal.css'
 import { WholeTradeEntity } from "types";
-import {AddExpression} from "../calculator/Calculator";
 import up from "../styles/Green_Arrow_Up_Darker.svg.png";
 import down from "../styles/900px-Red_Arrow_Down.svg.png";
+import {BarChart} from "./Modal3";
 
 interface Props {
     info: WholeTradeEntity
     isOpen: boolean,
     onClose: () => void
+}
+export interface IData {
+    label: string;
+    value: number;
 }
 
 export const Modal2 = (props: Props) => {
@@ -19,6 +23,29 @@ export const Modal2 = (props: Props) => {
             props.onClose()
         }
     }
+
+    const [data, setData] = useState<IData[]>([
+        {
+            label: "Weighted Average Price",
+            value: Number(props.info.weightedAvgPrice)
+        },
+        {
+            label: "Open Price",
+            value: Number(props.info.openPrice)
+        },
+        {
+            label: "Last Price",
+            value: Number(props.info.lastPrice)
+        },
+        {
+            label: "High Price",
+            value: Number(props.info.highPrice)
+        },
+        {
+            label: "Low Price",
+            value: Number(props.info.lowPrice)
+        },
+    ])
 
     useEffect(() => {
         document.addEventListener("keydown", handleEscape)
@@ -42,7 +69,7 @@ export const Modal2 = (props: Props) => {
             duration: 300
         }
     })
-
+    console.log(Number(props.info.openPrice))
     return modalTransition((styles, isOpen) => isOpen && (
         <animated.div className='react-modal-overlay' onClick={props.onClose}>
         <animated.div style={springs} className='react-modal-wrapper' onClick={e => e.stopPropagation()}>
@@ -120,6 +147,7 @@ export const Modal2 = (props: Props) => {
                         </div>
                     </div>
                 </div>
+                <BarChart data={data} sizeX={600} sizeY={300}></BarChart>
             </div>
         </animated.div>
     </animated.div>

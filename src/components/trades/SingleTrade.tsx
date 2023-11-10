@@ -67,7 +67,7 @@ export const SingleTrade = (props: Props) => {
             </div>
         </div>
         <div className="options">
-            {(props.favsLen >= 5 || contain()) ? '' : <button className="button1" onClick={updateList}>Add to the data base</button>}
+            {(props.favsLen >= 5 || contain()) ? '' : <button className="button1" onClick={updateList}>Add to your favourites</button>}
             <button className="button2" onClick={() => setOpenModal(!openModal)}>Calculator</button>
             <button className="button2" onClick={() => setOpenModal2(!openModal)}>More info</button>
             <Modal info={props.trade} isOpen={openModal} onClose={() => setOpenModal(false)}/>

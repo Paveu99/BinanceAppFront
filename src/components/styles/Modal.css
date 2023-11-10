@@ -21,6 +21,7 @@
 .react-modal-wrapper {
     max-width: 650px;
     margin: 10rem auto;
+    max-height: 1000px;
 }
 
 .react-modal-content {
@@ -115,6 +116,7 @@ header {
 .info {
     display: flex;
     flex-direction: row;
+    margin-bottom: 20px;
 }
 
 .main {
