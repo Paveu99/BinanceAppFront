@@ -125,7 +125,7 @@ export const SingleFavTrade = (props: Props) => {
             </div>
         </div>
         <div className="chart">
-            <BarChart data={data} sizeX={500} sizeY={150}></BarChart>
+            <BarChart data={data} sizeX={500} sizeY={150} color={'balck'}></BarChart>
         </div>
         <div className="buttons">
             <button className="button" onClick={deleteTrade}>Delete from favourites</button>
