@@ -8,6 +8,8 @@
     font-size: 25px;
     text-decoration: #a61b19;
     min-width: max-content;
+    min-height: min-content;
+    height: 25vh;
 }
 
 .title {
