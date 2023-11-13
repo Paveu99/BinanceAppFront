@@ -6,6 +6,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/keyboard'
+import '../components/styles/Slides.css'
 
 export const InfoPageCreator = () => {
   return <div>
@@ -18,13 +19,27 @@ export const InfoPageCreator = () => {
         pagination={{ clickable: true }}
         slidesPerView={1}
     >
-      <SwiperSlide><p style={{marginBottom: '100px'}}>author: Paweł Jarecki</p></SwiperSlide>
-      <SwiperSlide><p>email: <a href="mailto:paweljarecki10@gmail.com?subject=Question&body=Description">paweljarecki10@gmail.com</a></p></SwiperSlide>
-      <SwiperSlide><p>GitHub repository: <a href="https://github.com/Paveu99" target="_blank">github.com/Paveu99</a></p></SwiperSlide>
+      <SwiperSlide>
+        <div className='slide'>
+          <p className='slide__content'>
+            author: Paweł Jarecki
+          </p>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className='slide'>
+          <p className='slide__content'>
+            email: <a href="mailto:paweljarecki10@gmail.com?subject=Question&body=Description">paweljarecki10@gmail.com</a>
+          </p>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className='slide'>
+          <p className='slide__content'>
+            GitHub repository: <a href="https://github.com/Paveu99" target="_blank">github.com/Paveu99</a>
+          </p>
+        </div>
+      </SwiperSlide>
     </Swiper>
-    {/*<h1>Information about the creator:</h1>*/}
-    {/*<p>author: Paweł Jarecki</p>*/}
-    {/*<p>email: <a href="mailto:paweljarecki10@gmail.com?subject=Question&body=Description">paweljarecki10@gmail.com</a></p>*/}
-    {/*<p>GitHub repository: <a href="https://github.com/Paveu99" target="_blank">github.com/Paveu99</a></p>*/}
   </div>
 }
