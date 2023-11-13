@@ -1,9 +1,16 @@
-.slide {
+.swiper {
     min-height: 500px;
     height: 63vh;
-    padding: 0 50px 0 50px;
+    padding: 0 50px 50px 50px;
 }
 
-.slide__content {
-    padding-bottom: 50px
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+

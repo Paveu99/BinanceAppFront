@@ -9,7 +9,7 @@ import 'swiper/css/keyboard'
 import '../components/styles/Slides.css'
 
 export const InfoPageCreator = () => {
-  return <div>
+  return <div className="about-me">
     <h1>Information about the creator:</h1>
     <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y, Keyboard]}
@@ -21,23 +21,17 @@ export const InfoPageCreator = () => {
     >
       <SwiperSlide>
         <div className='slide'>
-          <p className='slide__content'>
             author: Paweł Jarecki
-          </p>
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className='slide'>
-          <p className='slide__content'>
             email: <a href="mailto:paweljarecki10@gmail.com?subject=Question&body=Description">paweljarecki10@gmail.com</a>
-          </p>
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className='slide'>
-          <p className='slide__content'>
             GitHub repository: <a href="https://github.com/Paveu99" target="_blank">github.com/Paveu99</a>
-          </p>
         </div>
       </SwiperSlide>
     </Swiper>
