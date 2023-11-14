@@ -78,6 +78,7 @@
     align-items: center;
     cursor: pointer;
     text-align: center;
+    border-radius: 15px;
     margin: 5px;
 }
 
@@ -85,6 +86,8 @@
     transition : 1000ms;
     transform : translateY(-0px);
     color: #a61b19;
+    background-color: #fff;
     padding: 0px 150px;
+    border-radius: 15px;
     box-shadow: 0 5px 15px #ffffff;
 }
