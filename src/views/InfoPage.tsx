@@ -1,4 +1,4 @@
-import '../components/styles/InfoPage.css'
+import '../components/styles/InfoPage.css';
 import el1 from '../components/styles/Screenshots/Main Page.png';
 import el2 from '../components/styles/Screenshots/Creator Tab.png';
 import el3 from '../components/styles/Screenshots/Login.png';
@@ -12,7 +12,7 @@ import el10 from '../components/styles/Screenshots/Edit-email.png';
 import el11 from '../components/styles/Screenshots/Edit-delete.png';
 import el12 from '../components/styles/Screenshots/Logout.png';
 import el13 from '../components/styles/Screenshots/kisspng-arrow-icon-right-arrow-png-image-5a7589d1736ad5.3965963915176524334728.png';
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
