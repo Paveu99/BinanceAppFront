@@ -1,15 +1,53 @@
 .explain {
-    width: 50%;
+    width: 60%;
     border: solid 1px white;
 }
 
-ul {
-    list-style: circle;
+.description {
+    width: 90%;
+    text-align: center;
+}
+.mySwiper {
+    min-height: 500px;
+    height: 70vh;
+    padding: 0 50px 50px 50px;
 }
 
-.description {
-    margin-bottom: 10px;
-    margin-top: 5px;
+.slide2 {
+    display: flex;
+    text-align: center;
+    font-size: 18px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.slide2 img {
+    border-radius: 20px;
     width: 50%;
+    min-width: 400px;
+}
+
+.slide2__desc {
+    width: 80%;
     text-align: justify;
+}
+
+.slide2__desc .slide2__direction {
+    display: flex;
+    flex-direction: row;
+    text-transform: uppercase;
+    margin: 100px 0 10px 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.slide2__desc .slide2__direction img {
+    min-width: 40px;
+}
+
+.slide2__desc .slide2__direction p {
+    margin: 0;
+    font-size: 25px;
 }
