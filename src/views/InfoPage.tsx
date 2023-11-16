@@ -1,17 +1,18 @@
 import '../components/styles/InfoPage.css';
 import el1 from '../components/styles/Screenshots/Main Page.png';
-import el2 from '../components/styles/Screenshots/Creator Tab.png';
+import el2 from '../components/styles/Screenshots/Info-creator.png';
 import el3 from '../components/styles/Screenshots/Login.png';
-import el4 from '../components/styles/Screenshots/Reg.png';
-import el5 from '../components/styles/Screenshots/Trade - fav.png';
-import el6 from '../components/styles/Screenshots/Trade - all.png';
-import el7 from '../components/styles/Screenshots/Trade - all - calc.png';
-import el8 from '../components/styles/Screenshots/Trade - all - more info.png';
+import el4 from '../components/styles/Screenshots/Register.png';
+import el5 from '../components/styles/Screenshots/All Trades-favs.png';
+import el6 from '../components/styles/Screenshots/All Trades-all.png';
+import el7 from '../components/styles/Screenshots/Calculator.png';
+import el8 from '../components/styles/Screenshots/More info.png';
 import el9 from '../components/styles/Screenshots/Edit-name.png';
 import el10 from '../components/styles/Screenshots/Edit-email.png';
 import el11 from '../components/styles/Screenshots/Edit-delete.png';
 import el12 from '../components/styles/Screenshots/Logout.png';
 import el13 from '../components/styles/Screenshots/kisspng-arrow-icon-right-arrow-png-image-5a7589d1736ad5.3965963915176524334728.png';
+import el14 from '../components/styles/Screenshots/Info.png';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -54,6 +55,13 @@ export const InfoPage = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide className="slide2">
+            <img className="explain" src={el14} title="Instructions" alt="Instruction"/>
+            <br/>
+            <div className="description">
+              Instruction page where you can see a tutorial, on how each functionality of this page works.
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className="slide2">
             <img className="explain" src={el2} title="Creator Page" alt="Creator Page"/>
             <br/>
             <div className="description">
@@ -80,6 +88,7 @@ export const InfoPage = () => {
             <div className="description">
               After you logged in and click on "Trades" tab you will be redirected.
               At the very top your favourite trades can be seen.
+              You can add up to 5 favourite trades.
             </div>
           </SwiperSlide>
           <SwiperSlide className="slide2">
@@ -133,15 +142,8 @@ export const InfoPage = () => {
             <img className="explain" src={el12} title="Add to favourites" alt="Add to favourites"/>
             <br/>
             <div className="description">
-              If you have less than 5 trades added to favourite you are able to add more by clicking on "Add to the data base".
+              If you want to log out just click "Log out" button on the top right hand sie of the page.
             </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-
-          </SwiperSlide>
-          <SwiperSlide>
-
           </SwiperSlide>
         </Swiper>
       </>
