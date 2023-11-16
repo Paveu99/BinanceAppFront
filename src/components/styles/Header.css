@@ -8,6 +8,8 @@
     font-size: 25px;
     text-decoration: #a61b19;
     min-width: max-content;
+    min-height: min-content;
+    height: 25vh;
 }
 
 .title {
@@ -76,12 +78,16 @@
     align-items: center;
     cursor: pointer;
     text-align: center;
+    border-radius: 15px;
     margin: 5px;
+    text-decoration: none;
 }
 
 .link2:hover{
     transition : 1000ms;
     transform : translateY(-0px);
     color: #a61b19;
+    background-color: #fff;
     padding: 0px 150px;
+    border-radius: 15px;
 }

@@ -6,6 +6,17 @@ import '../styles/Header.css'
 export const Header = () => {
     const [test, setTest] = useState<boolean>(false);
 
+    const styleOfLink = ({isActive}: {
+        isActive: boolean
+    }
+    ) => (
+        {
+            color: isActive ? "#a61b19" : '',
+            backgroundColor: isActive ? "#fff" : '',
+            padding: isActive ? "0px 150px" : "0px 100px",
+        }
+        )
+
     useEffect(() => {
         (async () => {
             if (await localStorage.getItem('token')) {
@@ -28,10 +39,10 @@ export const Header = () => {
             </div>
             <hr/>
             <div className="subdiv2">
-                <Link className="link2" style={{textDecoration: "none"}} to="/">Main page</Link>
-                <Link className="link2" style={{textDecoration: "none"}} to="/info">Instruction</Link>
-                <Link className="link2" style={{textDecoration: "none"}} to="/infoCreator">Creator</Link>
-                {test && <Link className="link2" style={{textDecoration: "none"}} to="/trades">Trades</Link>}
+                <NavLink className="link2" style={styleOfLink} to="/">Main page</NavLink>
+                <NavLink className="link2" style={styleOfLink} to="/info">Instruction</NavLink>
+                <NavLink className="link2" style={styleOfLink} to="/infoCreator">Creator</NavLink>
+                {test && <NavLink className="link2" style={styleOfLink} to="/trades">Trades</NavLink>}
             </div>
             <hr/>
         </header>
