@@ -41,7 +41,7 @@ export const InfoPageCreator = () => {
           <div className="about">
             <h2>email: <a href="mailto:paweljarecki10@gmail.com?subject=Question&body=Description">paweljarecki10@gmail.com</a></h2>
             <p className="precise">
-              Here is my emial in case you would like to contact me.
+              Here is my email in case you would like to contact me.
             </p>
           </div>
         </div>
