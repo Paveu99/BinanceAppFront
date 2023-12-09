@@ -13,7 +13,7 @@ Application as a whole is split into 2 sides: backend and frontend, which are co
 - Technologies
 
 # Demo
-Here is a demonstration how it works: https://youtu.be/D-W-dpEmqgY
+Here is a demonstration how it works: [https://youtu.be/D-W-dpEmqgY](https://youtu.be/z-WQBttCsMQ)](https://youtu.be/z-WQBttCsMQ)
 
 # Tech stack
 Client side was created using:
